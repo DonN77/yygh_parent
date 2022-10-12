@@ -1,0 +1,33 @@
+server:
+  port: 8201
+spring:
+  application:
+    name: service-hosp
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/yygh_hosp?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
+    username: root
+    password: hjb210907
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  data:
+    mongodb:
+      uri: mongodb://192.168.200.130:27017/test
+      auto-index-creation: false
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  rabbitmq:
+    host: 192.168.200.130
+    port: 5672
+    virtual-host: /
+    username: admin
+    password: 123
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

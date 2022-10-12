@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.donn.yygh.cmn.mapper.DictMapper">
+
+    <insert id="saveDictList" parameterType="java.util.List">
+        insert into dict(`id`,`parent_id`,`name`,`value`,`dict_code`)
+        values
+        <foreach collection="list" index="index" item="item" separator=",">
+            (#{item.id},#{item.parentId},#{item.name},#{item.value},#{item.dictCode})
+        </foreach>
+    </insert>
+</mapper>

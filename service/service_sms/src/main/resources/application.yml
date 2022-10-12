@@ -1,0 +1,29 @@
+server:
+    port: 8206
+spring:
+    application:
+        name: service-sms
+    cloud:
+        nacos:
+            discovery:
+                server-addr: localhost:8848
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+    redis:
+        database: 0
+        host: 192.168.200.130
+        lettuce:
+            pool:
+                max-active: 20
+                max-idle: 5
+                max-wait: -1
+                min-idle: 0
+        port: 6379
+        timeout: 1800000
+    rabbitmq:
+        host: 192.168.200.130
+        port: 5672
+        virtual-host: /
+        username: admin
+        password: 123
